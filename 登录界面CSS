@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body,html {
+	background: dodgerblue;
+	height: 100%;
+}
+#img {
+	height: 50%;
+}
+#login {
+	border-radius: 10px;
+	text-align: center;
+	width: 600px;
+	height: 300px;
+	background: white;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	position:absolute;
+}
+#login_bt {
+	width: 100px;
+	height: 25px;
+	border-radius: 5px;
+	background: #ccc;
+}
+#regist_bt {
+	width: 100px;
+	height: 25px;
+	border-radius: 5px;
+	background: #ccc;
+}
+p{
+	margin: 50px;
+}
