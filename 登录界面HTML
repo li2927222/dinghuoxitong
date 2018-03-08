@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登录界面</title>
+	<link rel="stylesheet" href="css/login.css" />
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="img">
+		
+	</div>
+	<div id="login">
+		<p>账号: <input type="text" id="user" name="user" /></p>
+		<p>密码: <input type="password" id="pwd" name="pwd"/></p>
+		<p>
+			<input type="button" value="登录" id="login_bt">
+			<input type="button" value="注册" id="regist_bt">
+		</p>
+		<p>
+			<label id="warning"></label>
+		</p>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</html>
