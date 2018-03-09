@@ -1,0 +1,37 @@
+$('#regist_bt').click(function() {
+	var username = $('#username').val();
+	var pwd1 = $('#pwd1').val();
+	var pwd2 = $('#pwd2').val();
+	var area = $(':selected', '#area').val();
+	var name = $('#name').val();
+	var phone = $('#phone').val();
+	$.ajax({
+		type: 'post',
+		url: "php/regist_user.php",
+		dataType: 'json',
+		data: {
+			'username': username,
+			'pwd1': pwd1,
+			'pwd2': pwd2,
+			'area': area,
+			'name': name,
+			'phone': phone,
+		},
+		success: function(data) {
+			if (data.val == 1) {
+				alert("恭喜您，注册成功！");
+				window.location.href = 'login.html';
+			} else if (data.val == 3) {
+				alert("用户名被占用！");
+			} else if (data.val == 0) {
+				alert("请填写完整信息");
+			} else {
+				alert("未知错误");
+			}
+		},
+		erro: function() {
+			alert("erro");
+		}
+	});
+
+});
