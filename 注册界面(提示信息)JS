@@ -1,0 +1,49 @@
+$(function() {
+	//用户名为空校验
+	$('#username').blur(function() {
+		var username = $('#username').val();
+		if (username == '') {
+			$('#user_info').html("×账号不能为空").css('color', 'red');
+		} else {
+			$.ajax({
+				type: 'post',
+				url: 'php/user_check.php',
+				dataType: 'json',
+				data: {
+					'username': username
+				},
+				success: function(data) {
+					if (data.val == 1) {
+						$('#user_info').html("√用户名可用").css("color", "green");
+					} else {
+						$('#user_info').html("×用户名被占用").css("color", "red");
+					}
+				},
+				erro: function(data) {
+					alert("未知错误");
+				}
+			});
+		}
+
+	});
+	//密码为空校验
+	$('#pwd1').blur(function() {
+		var pwd1 = $('#pwd1').val();
+		var pwd2 = $('#pwd2').val();
+		if (pwd1 == '') {
+			$('#pwd1_info').html("×密码不能为空").css('color', 'red');
+		} else {
+			$('#pwd1_info').html("√").css('color', 'green');
+		}
+	});
+	//密码一致校验
+	$('#pwd2').blur(function() {
+		var pwd1 = $('#pwd1').val();
+		var pwd2 = $('#pwd2').val();
+		if (pwd1 == pwd2 && pwd1 != '' && pwd2 != '') {
+			$('#pwd2_info').html("√密码一致").css('color', 'green');
+		} else {
+			$('#pwd2_info').html("×两次密码不一致").css('color', 'red');
+		}
+	});
+});
